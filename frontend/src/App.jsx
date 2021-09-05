@@ -1,6 +1,6 @@
 import React from 'react';
 import { StreamChat } from 'stream-chat';
-import { ChannelList, Chat } from 'stream-chat-react';
+import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
 import { ChannelContainer, ChannelListContainer, TeamChannelList } from './components';
@@ -17,16 +17,7 @@ const App = () => {
             <Chat client={client} theme="messaging dark">
                 <ChannelListContainer/>
                 <ChannelContainer/>
-                <ChannelList
-                    filters={{}}
-                    channelRenderFilterFn={() => {}}
-                    List={(listProps) => (
-                        <TeamChannelList 
-                            {...listProps}
-                            type="team"
-                        />
-                    )}
-                />
+
             </Chat>
         </div>
     );
