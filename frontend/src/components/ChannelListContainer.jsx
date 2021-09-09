@@ -37,7 +37,7 @@ const customChannelMessagingFilter = (channels) => {
     return channels.filter((channel) => channel.type === 'messaging');
 }
 
-const ChannelListContent = ({ isCreating, setIsCreating, setIsEditing, setCreateType }) => {
+const ChannelListContent = ({ isCreating, setIsCreating, setIsEditing, setCreateType, setToggleContainer }) => {
 
     const { client } = useChatContext();
 
@@ -71,12 +71,16 @@ const ChannelListContent = ({ isCreating, setIsCreating, setIsEditing, setCreate
                             setIsCreating={setIsCreating}
                             setIsEditing={setIsEditing}
                             setCreateType={setCreateType}
+                            setToggleContainer={setToggleContainer}
                         />
                     )}
                     Preview={(previewProps) => (
                         <TeamChannelPreview
                             {...previewProps}
-                            type="team"
+                            setIsCreating={setIsCreating}
+                            setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
+                            type="team"              
                         />
                     )}
                 />
@@ -91,11 +95,15 @@ const ChannelListContent = ({ isCreating, setIsCreating, setIsEditing, setCreate
                             setIsCreating={setIsCreating}
                             setIsEditing={setIsEditing}
                             setCreateType={setCreateType}
+                            setToggleContainer={setToggleContainer}
                         />
                     )}
                     Preview={(previewProps) => (
                         <TeamChannelPreview
                             {...previewProps}
+                            setIsCreating={setIsCreating}
+                            setIsEditing={setIsEditing}
+                            setToggleContainer={setToggleContainer}
                             type="messaging"
                         />
                     )}
