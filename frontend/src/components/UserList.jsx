@@ -32,10 +32,10 @@ const UserItem = ({ user, setSelectedUsers }) => {
             <div className="user-item__name-wrapper">
                 <Avatar 
                     image={user.image} 
-                    name={user.fullName || user.id} 
+                    name={user.name || user.id} 
                     size={32}
                 />
-                <p className="user-item__name">{user.fullName || user.id}</p>
+                <p className="user-item__name">{user.name || user.id}</p>
             </div>
             { selected ? <InviteIcon/> :
             <div className="user-item__invite-empty"/>}
